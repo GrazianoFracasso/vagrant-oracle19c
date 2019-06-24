@@ -1,0 +1,7 @@
+FULL=YES
+INCLUDE=SCHEMA:"IN (SELECT 'PUBLIC' FROM DUAL UNION SELECT username FROM dba_users WHERE username in ('framework','L0','L1','L2'))"
+INCLUDE=PUBLIC_SYNONYM/SYNONYM:"IN (SELECT synonym_name FROM dba_synonyms WHERE owner = 'PUBLIC' AND table_owner in ('framework','L0','L1','L2'))"
+DIRECTORY=oracle_dump
+DUMPFILE=orcl_expdp.dmp
+LOGFILE=orcl_expdp.log
+INCLUDE=ROLE:"IN (select role from dba_roles where role in (select grantee from dba_tab_privs where grantor in ('framework','L0','L1','L2')))" 
