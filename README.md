@@ -6,9 +6,8 @@ A vagrant box that provisions Oracle Database automatically, using Vagrant, an O
 2. Install [Vagrant](https://vagrantup.com/)
 
 ## Getting started
-1. Clone this repository `git clone https://github.com/oracle/vagrant-boxes`
-2. Change into the desired version folder
-3. Download the installation zip files from OTN into this folder - first time only:
+1. Clone this repository `git clone https://github.com/GrazianoFracasso/vagrant-oracle19c`
+3. Download the Oracle19c installation zip files ( LINUX.X64_193000_db_home.zip ) from OTN into this folder - first time only:
 [http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html](http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html)
 4. Run `vagrant up`
    1. The first time you run this it will provision everything and may take a while. Ensure you have (a good) internet connection as the scripts will update the virtual box to the latest via `yum`.
@@ -22,7 +21,8 @@ A vagrant box that provisions Oracle Database automatically, using Vagrant, an O
 * SID: `ORCLCDB`
 * PDB: `ORCLPDB1`
 * OEM port: `5500`
-* All passwords are auto-generated and printed on install
+* Username and Password: `sys / oracle`
+* Connection String: `192.168.4.50:1521/ORCLPDB1`
 
 ## Resetting password
 You can reset the password of the Oracle database accounts (SYS, SYSTEM and PDBADMIN only) by executing `/home/oracle/setPassword.sh <Your new password>`.
