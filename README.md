@@ -21,7 +21,7 @@ A vagrant box that provisions Oracle Database automatically, using Vagrant, an O
 * SID: `ORCLCDB`
 * PDB: `ORCLPDB1`
 * OEM port: `5500`
-* Username and Password: `sys / oracle`
+* Username and Password: `< generated and printed after the installation >`
 * Connection String: `192.168.4.50:1521/ORCLPDB1`
 
 ## Resetting password
