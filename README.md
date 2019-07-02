@@ -9,6 +9,7 @@ A vagrant box that provisions Oracle Database automatically, using Vagrant, an O
 1. Clone this repository `git clone https://github.com/GrazianoFracasso/vagrant-oracle19c`
 3. Download the Oracle19c installation zip files ( LINUX.X64_193000_db_home.zip ) from OTN into this folder - first time only:
 [http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html](http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html)
+![like this](https://i.imgur.com/ePKWoRN.png)
 4. Run `vagrant up`
    1. The first time you run this it will provision everything and may take a while. Ensure you have (a good) internet connection as the scripts will update the virtual box to the latest via `yum`.
    2. The Vagrant file allows for customization, if desired (see [Customization](#customization))
