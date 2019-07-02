@@ -2,7 +2,7 @@ VAGRANTFILE_API_VERSION = "2"
 
 # define hostname
 $ip = "192.168.50.4"
-NAME = "oracle-19c-vagrant"
+NAME = "oracle-19c-lab"
 
 unless Vagrant.has_plugin?("vagrant-proxyconf")
   puts 'Installing vagrant-proxyconf Plugin...'
@@ -20,16 +20,6 @@ else
   # if host time zone isn't an integer hour offset, fall back to UTC
   SYSTEM_TIMEZONE = 'UTC'
 end
-
-$reset_password = <<-SCRIPT
-su - oracle
-#echo "export ORACLE_BASE=/opt/oracle" >> /home/vagrant/.bash_profile
-#echo "export ORACLE_HOME=/opt/oracle/product/19c/dbhome_1" >> /home/vagrant/.bash_profile
-#echo "export ORACLE_SID=ORCLCDB" >> /home/vagrant/.bash_profile
-#echo "export ORACLE_PDB=ORCLPDB1" >> /home/vagrant/.bash_profile
-#echo "export PATH=$PATH:$ORACLE_HOME/bin" >> /home/vagrant/.bash_profile
-/home/oracle/setPassword.sh oracle
-SCRIPT
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "ol7-latest"
@@ -63,8 +53,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
        "SYSTEM_TIMEZONE"     => SYSTEM_TIMEZONE
     }
 
-  config.vm.provision "shell", inline: <<-SHELL
-        #{$reset_password}
-  SHELL
 
 end
